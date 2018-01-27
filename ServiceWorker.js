@@ -30,8 +30,8 @@ self.addEventListener('activate', (event) => {
     event.waitUntil(
         caches.keys().then(function (CacheNames) {
             return Promise.all(
-                CacheNames.filter(function (cache) {
-                    return cache.startsWith(StaticCacheName) && !cache.endsWith(index);
+                CacheNames.filter(function (cach) {
+                    return cach.startsWith(cache) && !cache.endsWith(version);
                 }).map(function (cacheName) {
                     return caches.delete(cacheName);
                 })
