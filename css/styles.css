@@ -1,4 +1,4 @@
-@charset "utf-8";
+
 /* CSS Document */
 
 body,td,th,p{
@@ -46,18 +46,12 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 #footer {
   background-color: #444;
-  padding: 25px 0%;
-
-}
-
-#footer-text {
   color: #aaa;
   font-size: 8pt;
   letter-spacing: 1px;
+  padding: 25px;
   text-align: center;
   text-transform: uppercase;
-  padding: 0 2%;
-  width: 100%;
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -299,4 +293,3 @@ nav h1 a {
 #restaurant-hours td {
   color: #666;
 }
-

@@ -10,8 +10,12 @@ var markers = []
 document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
   fetchCuisines();
+registerServiceWorker();
 });
 
+registerServiceWorker = () => {
+    navigator.serviceWorker.register('/ServiceWorker.js');
+};
 /**
  * Fetch all neighborhoods and set their HTML.
  */
