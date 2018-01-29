@@ -51,9 +51,13 @@ fetchRestaurantFromURL = (callback) => {
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
+  // New
+  name.tabIndex = restaurant.tabIndex;
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
+  // New
+  address.tabIndex = 0;
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
@@ -77,7 +81,8 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
   const hours = document.getElementById('restaurant-hours');
   for (let key in operatingHours) {
     const row = document.createElement('tr');
-
+    // New
+    row.tabIndex = 0;
     const day = document.createElement('td');
     day.innerHTML = key;
     row.appendChild(day);

@@ -1,6 +1,6 @@
 let restaurants,
-  neighborhoods,
-  cuisines
+    neighborhoods,
+    cuisines
 var map
 var markers = []
 
@@ -9,12 +9,12 @@ var markers = []
  */
 document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
-  fetchCuisines();
+fetchCuisines();
 registerServiceWorker();
 });
 
 registerServiceWorker = () => {
-    navigator.serviceWorker.register('/ServiceWorker.js');
+  navigator.serviceWorker.register('/ServiceWorker.js');
 };
 /**
  * Fetch all neighborhoods and set their HTML.
@@ -25,9 +25,9 @@ fetchNeighborhoods = () => {
       console.error(error);
     } else {
       self.neighborhoods = neighborhoods;
-      fillNeighborhoodsHTML();
-    }
-  });
+  fillNeighborhoodsHTML();
+}
+});
 }
 
 /**
@@ -37,10 +37,10 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   const select = document.getElementById('neighborhoods-select');
   neighborhoods.forEach(neighborhood => {
     const option = document.createElement('option');
-    option.innerHTML = neighborhood;
-    option.value = neighborhood;
-    select.append(option);
-  });
+  option.innerHTML = neighborhood;
+  option.value = neighborhood;
+  select.append(option);
+});
 }
 
 /**
@@ -52,9 +52,9 @@ fetchCuisines = () => {
       console.error(error);
     } else {
       self.cuisines = cuisines;
-      fillCuisinesHTML();
-    }
-  });
+  fillCuisinesHTML();
+}
+});
 }
 
 /**
@@ -65,10 +65,10 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
 
   cuisines.forEach(cuisine => {
     const option = document.createElement('option');
-    option.innerHTML = cuisine;
-    option.value = cuisine;
-    select.append(option);
-  });
+  option.innerHTML = cuisine;
+  option.value = cuisine;
+  select.append(option);
+});
 }
 
 /**
@@ -105,9 +105,9 @@ updateRestaurants = () => {
       console.error(error);
     } else {
       resetRestaurants(restaurants);
-      fillRestaurantsHTML();
-    }
-  })
+  fillRestaurantsHTML();
+}
+})
 }
 
 /**
@@ -132,7 +132,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
   const ul = document.getElementById('restaurants-list');
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
-  });
+});
   addMarkersToMap();
 }
 
@@ -174,9 +174,9 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
     const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
-    google.maps.event.addListener(marker, 'click', () => {
-      window.location.href = marker.url
-    });
-    self.markers.push(marker);
-  });
+  google.maps.event.addListener(marker, 'click', () => {
+    window.location.href = marker.url
+});
+  self.markers.push(marker);
+});
 }
