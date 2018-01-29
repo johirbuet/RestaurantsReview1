@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f3f3f3"/>
+  <link rel="shortcut icon" href="data/favicon.ico" type="image/x-icon">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Normalize.css for better cross-browser consistency -->
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <!-- Main CSS file -->
   <link rel="stylesheet" href="css/styles.css" type="text/css">
-  <!-- Normalize.css for better cross-browser consistency -->
-  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" media="print"/>
-
   <title>Restaurant Info</title>
 </head>
 
@@ -16,35 +16,32 @@
 <!-- Beginning header -->
 <header>
   <!-- Beginning nav -->
-  <nav id="detail_nav" role="navigation">
-    <h1 class="header__title"><a href="/">Restaurant Reviews</a></h1>
-    <!-- Beginning breadcrumb -->
-  </nav>
   <nav>
-    <ol id="breadcrumb" aria-label="Breadcrumb">
-      <li><a href="/">Home</a></li>
-    </ol>
+    <h1><a href="/">Restaurant Reviews</a></h1>
   </nav>
+  <!-- Beginning breadcrumb -->
+  <ul id="breadcrumb" >
+    <li><a href="/">Home</a></li>
+  </ul>
   <!-- End breadcrumb -->
   <!-- End nav -->
 </header>
 <!-- End header -->
 
 <!-- Beginning main -->
-<main id="maincontent" role="main">
+<main id="maincontent">
   <!-- Beginning map -->
-  <section id="map-container" role="application">
+  <section id="map-container">
     <div id="map"></div>
   </section>
   <!-- End map -->
   <!-- Beginning restaurant -->
-  <section id="restaurant-container" role="region">
-    <h2 id="restaurant-name" tabindex="0"></h2>
-    <img id="restaurant-img"/>
+  <section id="restaurant-container">
+    <h1 id="restaurant-name"></h1>
+    <img id="restaurant-img">
     <p id="restaurant-cuisine"></p>
-    <p id="restaurant-address" tabindex="0"></p>
-    <div hidden id="hours-info" aria-label="Restaurant hours"></div>
-    <table id="restaurant-hours" aria-describedby="hours-info"></table>
+    <p id="restaurant-address"></p>
+    <table id="restaurant-hours"></table>
   </section>
   <!-- end restaurant -->
   <!-- Beginning reviews -->
@@ -55,23 +52,21 @@
 </main>
 <!-- End main -->
 
+<!-- Beginning footer -->
+<footer id="footer">
+  <p id="footer-text">Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.</p>
+</footer>
+<!-- End footer -->
+
 <!-- Beginning scripts -->
 <!-- Database helpers -->
 <script type="text/javascript" src="js/dbhelper.js"></script>
 <!-- Main javascript file -->
 <script type="text/javascript" src="js/restaurant_info.js"></script>
 <!-- Google Maps -->
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0-T-z11zQzGJkCB-XwPRFuV2Iz1746Q8&libraries=places&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0-T-z11zQzGJkCB-XwPRFuV2Iz1746Q8&libraries=places&callback=initMap"></script>
 <!-- End scripts -->
-<script type="application/javascript" charset="utf-8" src="ServiceWorker.js"></script>
 
-
-<!-- Beginning footer -->
-<footer id="footer" role="contentinfo">
-  Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
-</footer>
-<!-- End footer -->
 </body>
 
 </html>
